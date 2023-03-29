@@ -1,15 +1,15 @@
-//require filesystem para trabajar con archivos.
-const fs = require('fs')
 
-//Clase Product Manager
-class ProductManager {
+import fs from 'fs'
 
-    //Funcion constructora para la creacion.
+
+export default class ProductManager {
+
+
     constructor(path) {
         this.path = path
     }
 
-    //id que solo se incrementa cuando se añade un producto.
+
     generateId = async () => {
         try {
             const products = await this.getProducts()
@@ -19,14 +19,14 @@ class ProductManager {
         }
     }
 
-    //Metodo para eliminar un producto por su ID
+    //Eliminar prod
     deleteProduct = async id => {
         const products = await this.getProducts()
         const newArray = products.filter(product => product.id !== id)
         await this.writeFile(newArray)
     }
 
-    //Metodo para actualizar un producto.
+    //Actualizar prod
     updateProduct = async (id, obj) => {
         const products = await this.getProducts()
         const product = await this.getProductById(id)
@@ -35,7 +35,7 @@ class ProductManager {
         await this.writeFile(products)
     }
 
-    //Metodo que recibe data y escribe en el path de cada product manager.
+    
     writeFile = async data => {
         try {
             await fs.promises.writeFile(this.path, JSON.stringify(data))
@@ -44,7 +44,7 @@ class ProductManager {
         }
     }
 
-    //Metodo añadir producto
+    //Add prod
     addProduct = async product => {
         const products = await this.getProducts()
         try {
@@ -56,7 +56,7 @@ class ProductManager {
         }
     }
 
-    //Metodo para obtener todos los productos
+
     getProducts = async () => {
         try {
             const products = await fs.promises.readFile(this.path, 'utf-8')
@@ -67,7 +67,7 @@ class ProductManager {
         }
     }
 
-    //Metodo para obtener un producto por el id.
+
     getProductById = async id => {
         try {
             const products = await this.getProducts()
@@ -78,11 +78,11 @@ class ProductManager {
         }
     }
 
-    //Metodo para borrar todos los productos.
+    //Clear prod
     deleteAllProducts = async () => {
         await this.writeFile([])
     }
 }
 
-//Usamos module.exports para poder usarlo en el archivo 'script.js'
-module.exports = ProductManager
+
+
