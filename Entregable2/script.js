@@ -11,21 +11,21 @@ const execute = async () => {
 
     //Añadimos un producto
     await productManager.addProduct({
-        title: 'Alpine roses masksss',
-        description: 'Mascara para la cara.',
-        price: 2000,
-        thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bossyapp-54cf2.appspot.com/o/productsImages%2Fmask_alpineroses.png?alt=media&token=d84fd60e-e3bc-4d34-ba41-025bc3d6797f',
-        code: '1S',
-        stock: 5
+        title: 'Lavarropa Automatico Whirpool',
+        description: '10 años de uso, funciona todo',
+        price: 5000,
+        thumbnail: null, 
+        code: '1',
+        stock: 2
     })
 
     //Añadimos otro producto.
     await productManager.addProduct({
-        title: 'Caps cellu controll',
-        description: 'Capsulas para bajar de peso.',
-        price: 1000,
-        thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bossyapp-54cf2.appspot.com/o/productsImages%2Fcaps_cellucontrol.png?alt=media&token=a846b227-6902-44d8-8654-2db662d1c597',
-        code: '1D',
+        title: 'Bicicleta para niños',
+        description: 'Tomaselli, 1 año de uso',
+        price: 8500,
+        thumbnail: null,
+        code: '2',
         stock: 3
     })
 

@@ -1,6 +1,5 @@
 //require filesystem para trabajar con archivos.
-import fs from 'fs';
-
+const fs = require('fs')
 
 //Clase Product Manager
 class ProductManager {
